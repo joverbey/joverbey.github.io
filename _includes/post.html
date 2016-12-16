@@ -1,0 +1,30 @@
+<div class="content" id="home">
+  <div id="sidebar-button">
+    <img src="/images/sidebar-button.png">
+  </div>
+  <div id="post-info">
+    <div id="cover-photo-container">
+      <img id="cover-photo" src="{{ site.github.url }}/images/{{ page.cover }}">
+    </div>
+    <div id="info-container">
+      <h1 id="title">{{ page.title }}</h1>
+      <span id="date">{{ page.date | date_to_string }}</span>
+    </div>
+  </div>
+
+  <div class="post">
+    {{ content }}
+  </div>
+  <div class="colophon">
+    <p>
+      <span id="pub-date">Published on {{ page.date | date_to_string }}</span> <span class="separator">&bull;</span>
+      <span id="word-count">{{ page.content | strip_html | number_of_words }} words <span class="separator">&bull;</span>
+      <span id="social">Comments? <a href="http://www.google.com/recaptcha/mailhide/d?k=01Y7tF2jw9w9xLZucF314wPA==&amp;c=q6vUJyh7NztFNzwTojRuECzwRgJ8lixJT3LvIi58VCM=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501Y7tF2jw9w9xLZucF314wPA\75\75\46c\75q6vUJyh7NztFNzwTojRuECzwRgJ8lixJT3LvIi58VCM\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;">E-mail me</a>!</span>
+    </p>
+  </div>
+  <div class="copyright">
+    <p>
+      <span id="copyright">Copyright &copy; {{ page.date | date: '%Y' }} Jeffrey L. Overbey.  All rights reserved.  Except for source code where an explicit license is given, no part of this blog may be copied, reproduced, published, translated, or distributed, in whole or in part, without the written permission of the copyright owner.</span>
+    </p>
+  </div>
+</div>

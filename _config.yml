@@ -1,0 +1,9 @@
+name: 256LOL
+highlighter: rouge
+timezone: America/New_York
+future: false
+include:
+  - "_posts"
+  - "code"
+gems:
+  - github-pages
