@@ -2,6 +2,10 @@ name: 256LOL
 highlighter: rouge
 timezone: America/New_York
 future: false
+exclude:
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
 include:
   - "_posts"
   - "code"
