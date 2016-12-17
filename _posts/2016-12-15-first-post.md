@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "256 Lines or Less (the joverblog?)"
-cover:  gophamily.png
+cover:  empty.jpg
 date:   2016-12-15 12:00:00 ET
 categories: blog
 ---
