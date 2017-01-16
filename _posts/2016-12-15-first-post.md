@@ -16,7 +16,7 @@ The first post will show how to build a small x86 assembler in C.  I'm not sure 
 
 At some point, I'll probably take advantage of the fact that 0 is less than 256, which gives me a remarkable amount of flexibility.
 
-Stay tuned.  The first "real" post -- an x86 (subset) assembler in 256 LOC -- goes live on January 1.
+Stay tuned.  The first "real" post -- an x86 (subset) assembler in 256 LOC -- goes live on <strike>January 1</strike> January 15.
 
 <small><font color="gray"><sup>1</sup> Why 256 lines?  The <a target="_blank" href="https://www.eclipse.org/legal/EclipseLegalProcessPoster.pdf">Eclipse Foundation Legal Process</a> used to define 250 lines of code as the upper limit for a "small" contribution that could be committed without a full IP review.  (That limit is now 1000 lines.)  I was going to call the blog "250 Lines or Less," but <a target="_blank" href="http://blog.mattrbianchi.com/">Matt Bianchi</a> reminded me that 256 was obviously a better choice.  Also, this length corresponds to about four printed pages, which seems like "not a lot."</font></small>
 
