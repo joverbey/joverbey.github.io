@@ -1,0 +1,3 @@
+*.obj
+test-x86asm
+test-x86asm.exe

@@ -1,0 +1,1021 @@
+  00000000: 90                 nop
+  00000000: B8 00 00 00 00     mov         eax,0
+  00000000: B8 01 00 00 00     mov         eax,1
+  00000000: B8 0F 00 00 00     mov         eax,0Fh
+  00000000: B8 F0 00 00 00     mov         eax,0F0h
+  00000000: B8 78 56 34 12     mov         eax,12345678h
+  00000000: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000000: B8 FF FF FF FF     mov         eax,0FFFFFFFFh
+  00000000: B9 00 00 00 00     mov         ecx,0
+  00000000: B9 01 00 00 00     mov         ecx,1
+  00000000: B9 0F 00 00 00     mov         ecx,0Fh
+  00000000: B9 F0 00 00 00     mov         ecx,0F0h
+  00000000: B9 78 56 34 12     mov         ecx,12345678h
+  00000000: B9 FE FF FF FF     mov         ecx,0FFFFFFFEh
+  00000000: B9 FF FF FF FF     mov         ecx,0FFFFFFFFh
+  00000000: BA 00 00 00 00     mov         edx,0
+  00000000: BA 01 00 00 00     mov         edx,1
+  00000000: BA 0F 00 00 00     mov         edx,0Fh
+  00000000: BA F0 00 00 00     mov         edx,0F0h
+  00000000: BA 78 56 34 12     mov         edx,12345678h
+  00000000: BA FE FF FF FF     mov         edx,0FFFFFFFEh
+  00000000: BA FF FF FF FF     mov         edx,0FFFFFFFFh
+  00000000: BB 00 00 00 00     mov         ebx,0
+  00000000: BB 01 00 00 00     mov         ebx,1
+  00000000: BB 0F 00 00 00     mov         ebx,0Fh
+  00000000: BB F0 00 00 00     mov         ebx,0F0h
+  00000000: BB 78 56 34 12     mov         ebx,12345678h
+  00000000: BB FE FF FF FF     mov         ebx,0FFFFFFFEh
+  00000000: BB FF FF FF FF     mov         ebx,0FFFFFFFFh
+  00000000: BC 00 00 00 00     mov         esp,0
+  00000000: BC 01 00 00 00     mov         esp,1
+  00000000: BC 0F 00 00 00     mov         esp,0Fh
+  00000000: BC F0 00 00 00     mov         esp,0F0h
+  00000000: BC 78 56 34 12     mov         esp,12345678h
+  00000000: BC FE FF FF FF     mov         esp,0FFFFFFFEh
+  00000000: BC FF FF FF FF     mov         esp,0FFFFFFFFh
+  00000000: BD 00 00 00 00     mov         ebp,0
+  00000000: BD 01 00 00 00     mov         ebp,1
+  00000000: BD 0F 00 00 00     mov         ebp,0Fh
+  00000000: BD F0 00 00 00     mov         ebp,0F0h
+  00000000: BD 78 56 34 12     mov         ebp,12345678h
+  00000000: BD FE FF FF FF     mov         ebp,0FFFFFFFEh
+  00000000: BD FF FF FF FF     mov         ebp,0FFFFFFFFh
+  00000000: BE 00 00 00 00     mov         esi,0
+  00000000: BE 01 00 00 00     mov         esi,1
+  00000000: BE 0F 00 00 00     mov         esi,0Fh
+  00000000: BE F0 00 00 00     mov         esi,0F0h
+  00000000: BE 78 56 34 12     mov         esi,12345678h
+  00000000: BE FE FF FF FF     mov         esi,0FFFFFFFEh
+  00000000: BE FF FF FF FF     mov         esi,0FFFFFFFFh
+  00000000: BF 00 00 00 00     mov         edi,0
+  00000000: BF 01 00 00 00     mov         edi,1
+  00000000: BF 0F 00 00 00     mov         edi,0Fh
+  00000000: BF F0 00 00 00     mov         edi,0F0h
+  00000000: BF 78 56 34 12     mov         edi,12345678h
+  00000000: BF FE FF FF FF     mov         edi,0FFFFFFFEh
+  00000000: BF FF FF FF FF     mov         edi,0FFFFFFFFh
+  00000000: 8B 00              mov         eax,dword ptr [eax]
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000000: 8B 02              mov         eax,dword ptr [edx]
+  00000000: 8B 03              mov         eax,dword ptr [ebx]
+  00000000: 8B 04 24           mov         eax,dword ptr [esp]
+  00000000: 8B 45 00           mov         eax,dword ptr [ebp]
+  00000000: 8B 06              mov         eax,dword ptr [esi]
+  00000000: 8B 07              mov         eax,dword ptr [edi]
+  00000000: 8B 08              mov         ecx,dword ptr [eax]
+  00000000: 8B 09              mov         ecx,dword ptr [ecx]
+  00000000: 8B 0A              mov         ecx,dword ptr [edx]
+  00000000: 8B 0B              mov         ecx,dword ptr [ebx]
+  00000000: 8B 0C 24           mov         ecx,dword ptr [esp]
+  00000000: 8B 4D 00           mov         ecx,dword ptr [ebp]
+  00000000: 8B 0E              mov         ecx,dword ptr [esi]
+  00000000: 8B 0F              mov         ecx,dword ptr [edi]
+  00000000: 8B 10              mov         edx,dword ptr [eax]
+  00000000: 8B 11              mov         edx,dword ptr [ecx]
+  00000000: 8B 12              mov         edx,dword ptr [edx]
+  00000000: 8B 13              mov         edx,dword ptr [ebx]
+  00000000: 8B 14 24           mov         edx,dword ptr [esp]
+  00000000: 8B 55 00           mov         edx,dword ptr [ebp]
+  00000000: 8B 16              mov         edx,dword ptr [esi]
+  00000000: 8B 17              mov         edx,dword ptr [edi]
+  00000000: 8B 18              mov         ebx,dword ptr [eax]
+  00000000: 8B 19              mov         ebx,dword ptr [ecx]
+  00000000: 8B 1A              mov         ebx,dword ptr [edx]
+  00000000: 8B 1B              mov         ebx,dword ptr [ebx]
+  00000000: 8B 1C 24           mov         ebx,dword ptr [esp]
+  00000000: 8B 5D 00           mov         ebx,dword ptr [ebp]
+  00000000: 8B 1E              mov         ebx,dword ptr [esi]
+  00000000: 8B 1F              mov         ebx,dword ptr [edi]
+  00000000: 8B 20              mov         esp,dword ptr [eax]
+  00000000: 8B 21              mov         esp,dword ptr [ecx]
+  00000000: 8B 22              mov         esp,dword ptr [edx]
+  00000000: 8B 23              mov         esp,dword ptr [ebx]
+  00000000: 8B 24 24           mov         esp,dword ptr [esp]
+  00000000: 8B 65 00           mov         esp,dword ptr [ebp]
+  00000000: 8B 26              mov         esp,dword ptr [esi]
+  00000000: 8B 27              mov         esp,dword ptr [edi]
+  00000000: 8B 28              mov         ebp,dword ptr [eax]
+  00000000: 8B 29              mov         ebp,dword ptr [ecx]
+  00000000: 8B 2A              mov         ebp,dword ptr [edx]
+  00000000: 8B 2B              mov         ebp,dword ptr [ebx]
+  00000000: 8B 2C 24           mov         ebp,dword ptr [esp]
+  00000000: 8B 6D 00           mov         ebp,dword ptr [ebp]
+  00000000: 8B 2E              mov         ebp,dword ptr [esi]
+  00000000: 8B 2F              mov         ebp,dword ptr [edi]
+  00000000: 8B 30              mov         esi,dword ptr [eax]
+  00000000: 8B 31              mov         esi,dword ptr [ecx]
+  00000000: 8B 32              mov         esi,dword ptr [edx]
+  00000000: 8B 33              mov         esi,dword ptr [ebx]
+  00000000: 8B 34 24           mov         esi,dword ptr [esp]
+  00000000: 8B 75 00           mov         esi,dword ptr [ebp]
+  00000000: 8B 36              mov         esi,dword ptr [esi]
+  00000000: 8B 37              mov         esi,dword ptr [edi]
+  00000000: 8B 38              mov         edi,dword ptr [eax]
+  00000000: 8B 39              mov         edi,dword ptr [ecx]
+  00000000: 8B 3A              mov         edi,dword ptr [edx]
+  00000000: 8B 3B              mov         edi,dword ptr [ebx]
+  00000000: 8B 3C 24           mov         edi,dword ptr [esp]
+  00000000: 8B 7D 00           mov         edi,dword ptr [ebp]
+  00000000: 8B 3E              mov         edi,dword ptr [esi]
+  00000000: 8B 3F              mov         edi,dword ptr [edi]
+  00000000: 89 00              mov         dword ptr [eax],eax
+  00000000: 89 01              mov         dword ptr [ecx],eax
+  00000000: 89 02              mov         dword ptr [edx],eax
+  00000000: 89 03              mov         dword ptr [ebx],eax
+  00000000: 89 04 24           mov         dword ptr [esp],eax
+  00000000: 89 45 00           mov         dword ptr [ebp],eax
+  00000000: 89 06              mov         dword ptr [esi],eax
+  00000000: 89 07              mov         dword ptr [edi],eax
+  00000000: 89 08              mov         dword ptr [eax],ecx
+  00000000: 89 09              mov         dword ptr [ecx],ecx
+  00000000: 89 0A              mov         dword ptr [edx],ecx
+  00000000: 89 0B              mov         dword ptr [ebx],ecx
+  00000000: 89 0C 24           mov         dword ptr [esp],ecx
+  00000000: 89 4D 00           mov         dword ptr [ebp],ecx
+  00000000: 89 0E              mov         dword ptr [esi],ecx
+  00000000: 89 0F              mov         dword ptr [edi],ecx
+  00000000: 89 10              mov         dword ptr [eax],edx
+  00000000: 89 11              mov         dword ptr [ecx],edx
+  00000000: 89 12              mov         dword ptr [edx],edx
+  00000000: 89 13              mov         dword ptr [ebx],edx
+  00000000: 89 14 24           mov         dword ptr [esp],edx
+  00000000: 89 55 00           mov         dword ptr [ebp],edx
+  00000000: 89 16              mov         dword ptr [esi],edx
+  00000000: 89 17              mov         dword ptr [edi],edx
+  00000000: 89 18              mov         dword ptr [eax],ebx
+  00000000: 89 19              mov         dword ptr [ecx],ebx
+  00000000: 89 1A              mov         dword ptr [edx],ebx
+  00000000: 89 1B              mov         dword ptr [ebx],ebx
+  00000000: 89 1C 24           mov         dword ptr [esp],ebx
+  00000000: 89 5D 00           mov         dword ptr [ebp],ebx
+  00000000: 89 1E              mov         dword ptr [esi],ebx
+  00000000: 89 1F              mov         dword ptr [edi],ebx
+  00000000: 89 20              mov         dword ptr [eax],esp
+  00000000: 89 21              mov         dword ptr [ecx],esp
+  00000000: 89 22              mov         dword ptr [edx],esp
+  00000000: 89 23              mov         dword ptr [ebx],esp
+  00000000: 89 24 24           mov         dword ptr [esp],esp
+  00000000: 89 65 00           mov         dword ptr [ebp],esp
+  00000000: 89 26              mov         dword ptr [esi],esp
+  00000000: 89 27              mov         dword ptr [edi],esp
+  00000000: 89 28              mov         dword ptr [eax],ebp
+  00000000: 89 29              mov         dword ptr [ecx],ebp
+  00000000: 89 2A              mov         dword ptr [edx],ebp
+  00000000: 89 2B              mov         dword ptr [ebx],ebp
+  00000000: 89 2C 24           mov         dword ptr [esp],ebp
+  00000000: 89 6D 00           mov         dword ptr [ebp],ebp
+  00000000: 89 2E              mov         dword ptr [esi],ebp
+  00000000: 89 2F              mov         dword ptr [edi],ebp
+  00000000: 89 30              mov         dword ptr [eax],esi
+  00000000: 89 31              mov         dword ptr [ecx],esi
+  00000000: 89 32              mov         dword ptr [edx],esi
+  00000000: 89 33              mov         dword ptr [ebx],esi
+  00000000: 89 34 24           mov         dword ptr [esp],esi
+  00000000: 89 75 00           mov         dword ptr [ebp],esi
+  00000000: 89 36              mov         dword ptr [esi],esi
+  00000000: 89 37              mov         dword ptr [edi],esi
+  00000000: 89 38              mov         dword ptr [eax],edi
+  00000000: 89 39              mov         dword ptr [ecx],edi
+  00000000: 89 3A              mov         dword ptr [edx],edi
+  00000000: 89 3B              mov         dword ptr [ebx],edi
+  00000000: 89 3C 24           mov         dword ptr [esp],edi
+  00000000: 89 7D 00           mov         dword ptr [ebp],edi
+  00000000: 89 3E              mov         dword ptr [esi],edi
+  00000000: 89 3F              mov         dword ptr [edi],edi
+  00000000: 8B C0              mov         eax,eax
+  00000000: 8B C1              mov         eax,ecx
+  00000000: 8B C2              mov         eax,edx
+  00000000: 8B C3              mov         eax,ebx
+  00000000: 8B C4              mov         eax,esp
+  00000000: 8B C5              mov         eax,ebp
+  00000000: 8B C6              mov         eax,esi
+  00000000: 8B C7              mov         eax,edi
+  00000000: 8B C8              mov         ecx,eax
+  00000000: 8B C9              mov         ecx,ecx
+  00000000: 8B CA              mov         ecx,edx
+  00000000: 8B CB              mov         ecx,ebx
+  00000000: 8B CC              mov         ecx,esp
+  00000000: 8B CD              mov         ecx,ebp
+  00000000: 8B CE              mov         ecx,esi
+  00000000: 8B CF              mov         ecx,edi
+  00000000: 8B D0              mov         edx,eax
+  00000000: 8B D1              mov         edx,ecx
+  00000000: 8B D2              mov         edx,edx
+  00000000: 8B D3              mov         edx,ebx
+  00000000: 8B D4              mov         edx,esp
+  00000000: 8B D5              mov         edx,ebp
+  00000000: 8B D6              mov         edx,esi
+  00000000: 8B D7              mov         edx,edi
+  00000000: 8B D8              mov         ebx,eax
+  00000000: 8B D9              mov         ebx,ecx
+  00000000: 8B DA              mov         ebx,edx
+  00000000: 8B DB              mov         ebx,ebx
+  00000000: 8B DC              mov         ebx,esp
+  00000000: 8B DD              mov         ebx,ebp
+  00000000: 8B DE              mov         ebx,esi
+  00000000: 8B DF              mov         ebx,edi
+  00000000: 8B E0              mov         esp,eax
+  00000000: 8B E1              mov         esp,ecx
+  00000000: 8B E2              mov         esp,edx
+  00000000: 8B E3              mov         esp,ebx
+  00000000: 8B E4              mov         esp,esp
+  00000000: 8B E5              mov         esp,ebp
+  00000000: 8B E6              mov         esp,esi
+  00000000: 8B E7              mov         esp,edi
+  00000000: 8B E8              mov         ebp,eax
+  00000000: 8B E9              mov         ebp,ecx
+  00000000: 8B EA              mov         ebp,edx
+  00000000: 8B EB              mov         ebp,ebx
+  00000000: 8B EC              mov         ebp,esp
+  00000000: 8B ED              mov         ebp,ebp
+  00000000: 8B EE              mov         ebp,esi
+  00000000: 8B EF              mov         ebp,edi
+  00000000: 8B F0              mov         esi,eax
+  00000000: 8B F1              mov         esi,ecx
+  00000000: 8B F2              mov         esi,edx
+  00000000: 8B F3              mov         esi,ebx
+  00000000: 8B F4              mov         esi,esp
+  00000000: 8B F5              mov         esi,ebp
+  00000000: 8B F6              mov         esi,esi
+  00000000: 8B F7              mov         esi,edi
+  00000000: 8B F8              mov         edi,eax
+  00000000: 8B F9              mov         edi,ecx
+  00000000: 8B FA              mov         edi,edx
+  00000000: 8B FB              mov         edi,ebx
+  00000000: 8B FC              mov         edi,esp
+  00000000: 8B FD              mov         edi,ebp
+  00000000: 8B FE              mov         edi,esi
+  00000000: 8B FF              mov         edi,edi
+  00000000: 03 C0              add         eax,eax
+  00000000: 03 C1              add         eax,ecx
+  00000000: 03 C2              add         eax,edx
+  00000000: 03 C3              add         eax,ebx
+  00000000: 03 C4              add         eax,esp
+  00000000: 03 C5              add         eax,ebp
+  00000000: 03 C6              add         eax,esi
+  00000000: 03 C7              add         eax,edi
+  00000000: 03 C8              add         ecx,eax
+  00000000: 03 C9              add         ecx,ecx
+  00000000: 03 CA              add         ecx,edx
+  00000000: 03 CB              add         ecx,ebx
+  00000000: 03 CC              add         ecx,esp
+  00000000: 03 CD              add         ecx,ebp
+  00000000: 03 CE              add         ecx,esi
+  00000000: 03 CF              add         ecx,edi
+  00000000: 03 D0              add         edx,eax
+  00000000: 03 D1              add         edx,ecx
+  00000000: 03 D2              add         edx,edx
+  00000000: 03 D3              add         edx,ebx
+  00000000: 03 D4              add         edx,esp
+  00000000: 03 D5              add         edx,ebp
+  00000000: 03 D6              add         edx,esi
+  00000000: 03 D7              add         edx,edi
+  00000000: 03 D8              add         ebx,eax
+  00000000: 03 D9              add         ebx,ecx
+  00000000: 03 DA              add         ebx,edx
+  00000000: 03 DB              add         ebx,ebx
+  00000000: 03 DC              add         ebx,esp
+  00000000: 03 DD              add         ebx,ebp
+  00000000: 03 DE              add         ebx,esi
+  00000000: 03 DF              add         ebx,edi
+  00000000: 03 E0              add         esp,eax
+  00000000: 03 E1              add         esp,ecx
+  00000000: 03 E2              add         esp,edx
+  00000000: 03 E3              add         esp,ebx
+  00000000: 03 E4              add         esp,esp
+  00000000: 03 E5              add         esp,ebp
+  00000000: 03 E6              add         esp,esi
+  00000000: 03 E7              add         esp,edi
+  00000000: 03 E8              add         ebp,eax
+  00000000: 03 E9              add         ebp,ecx
+  00000000: 03 EA              add         ebp,edx
+  00000000: 03 EB              add         ebp,ebx
+  00000000: 03 EC              add         ebp,esp
+  00000000: 03 ED              add         ebp,ebp
+  00000000: 03 EE              add         ebp,esi
+  00000000: 03 EF              add         ebp,edi
+  00000000: 03 F0              add         esi,eax
+  00000000: 03 F1              add         esi,ecx
+  00000000: 03 F2              add         esi,edx
+  00000000: 03 F3              add         esi,ebx
+  00000000: 03 F4              add         esi,esp
+  00000000: 03 F5              add         esi,ebp
+  00000000: 03 F6              add         esi,esi
+  00000000: 03 F7              add         esi,edi
+  00000000: 03 F8              add         edi,eax
+  00000000: 03 F9              add         edi,ecx
+  00000000: 03 FA              add         edi,edx
+  00000000: 03 FB              add         edi,ebx
+  00000000: 03 FC              add         edi,esp
+  00000000: 03 FD              add         edi,ebp
+  00000000: 03 FE              add         edi,esi
+  00000000: 03 FF              add         edi,edi
+  00000000: 2B C0              sub         eax,eax
+  00000000: 2B C1              sub         eax,ecx
+  00000000: 2B C2              sub         eax,edx
+  00000000: 2B C3              sub         eax,ebx
+  00000000: 2B C4              sub         eax,esp
+  00000000: 2B C5              sub         eax,ebp
+  00000000: 2B C6              sub         eax,esi
+  00000000: 2B C7              sub         eax,edi
+  00000000: 2B C8              sub         ecx,eax
+  00000000: 2B C9              sub         ecx,ecx
+  00000000: 2B CA              sub         ecx,edx
+  00000000: 2B CB              sub         ecx,ebx
+  00000000: 2B CC              sub         ecx,esp
+  00000000: 2B CD              sub         ecx,ebp
+  00000000: 2B CE              sub         ecx,esi
+  00000000: 2B CF              sub         ecx,edi
+  00000000: 2B D0              sub         edx,eax
+  00000000: 2B D1              sub         edx,ecx
+  00000000: 2B D2              sub         edx,edx
+  00000000: 2B D3              sub         edx,ebx
+  00000000: 2B D4              sub         edx,esp
+  00000000: 2B D5              sub         edx,ebp
+  00000000: 2B D6              sub         edx,esi
+  00000000: 2B D7              sub         edx,edi
+  00000000: 2B D8              sub         ebx,eax
+  00000000: 2B D9              sub         ebx,ecx
+  00000000: 2B DA              sub         ebx,edx
+  00000000: 2B DB              sub         ebx,ebx
+  00000000: 2B DC              sub         ebx,esp
+  00000000: 2B DD              sub         ebx,ebp
+  00000000: 2B DE              sub         ebx,esi
+  00000000: 2B DF              sub         ebx,edi
+  00000000: 2B E0              sub         esp,eax
+  00000000: 2B E1              sub         esp,ecx
+  00000000: 2B E2              sub         esp,edx
+  00000000: 2B E3              sub         esp,ebx
+  00000000: 2B E4              sub         esp,esp
+  00000000: 2B E5              sub         esp,ebp
+  00000000: 2B E6              sub         esp,esi
+  00000000: 2B E7              sub         esp,edi
+  00000000: 2B E8              sub         ebp,eax
+  00000000: 2B E9              sub         ebp,ecx
+  00000000: 2B EA              sub         ebp,edx
+  00000000: 2B EB              sub         ebp,ebx
+  00000000: 2B EC              sub         ebp,esp
+  00000000: 2B ED              sub         ebp,ebp
+  00000000: 2B EE              sub         ebp,esi
+  00000000: 2B EF              sub         ebp,edi
+  00000000: 2B F0              sub         esi,eax
+  00000000: 2B F1              sub         esi,ecx
+  00000000: 2B F2              sub         esi,edx
+  00000000: 2B F3              sub         esi,ebx
+  00000000: 2B F4              sub         esi,esp
+  00000000: 2B F5              sub         esi,ebp
+  00000000: 2B F6              sub         esi,esi
+  00000000: 2B F7              sub         esi,edi
+  00000000: 2B F8              sub         edi,eax
+  00000000: 2B F9              sub         edi,ecx
+  00000000: 2B FA              sub         edi,edx
+  00000000: 2B FB              sub         edi,ebx
+  00000000: 2B FC              sub         edi,esp
+  00000000: 2B FD              sub         edi,ebp
+  00000000: 2B FE              sub         edi,esi
+  00000000: 2B FF              sub         edi,edi
+  00000000: 23 C0              and         eax,eax
+  00000000: 23 C1              and         eax,ecx
+  00000000: 23 C2              and         eax,edx
+  00000000: 23 C3              and         eax,ebx
+  00000000: 23 C4              and         eax,esp
+  00000000: 23 C5              and         eax,ebp
+  00000000: 23 C6              and         eax,esi
+  00000000: 23 C7              and         eax,edi
+  00000000: 23 C8              and         ecx,eax
+  00000000: 23 C9              and         ecx,ecx
+  00000000: 23 CA              and         ecx,edx
+  00000000: 23 CB              and         ecx,ebx
+  00000000: 23 CC              and         ecx,esp
+  00000000: 23 CD              and         ecx,ebp
+  00000000: 23 CE              and         ecx,esi
+  00000000: 23 CF              and         ecx,edi
+  00000000: 23 D0              and         edx,eax
+  00000000: 23 D1              and         edx,ecx
+  00000000: 23 D2              and         edx,edx
+  00000000: 23 D3              and         edx,ebx
+  00000000: 23 D4              and         edx,esp
+  00000000: 23 D5              and         edx,ebp
+  00000000: 23 D6              and         edx,esi
+  00000000: 23 D7              and         edx,edi
+  00000000: 23 D8              and         ebx,eax
+  00000000: 23 D9              and         ebx,ecx
+  00000000: 23 DA              and         ebx,edx
+  00000000: 23 DB              and         ebx,ebx
+  00000000: 23 DC              and         ebx,esp
+  00000000: 23 DD              and         ebx,ebp
+  00000000: 23 DE              and         ebx,esi
+  00000000: 23 DF              and         ebx,edi
+  00000000: 23 E0              and         esp,eax
+  00000000: 23 E1              and         esp,ecx
+  00000000: 23 E2              and         esp,edx
+  00000000: 23 E3              and         esp,ebx
+  00000000: 23 E4              and         esp,esp
+  00000000: 23 E5              and         esp,ebp
+  00000000: 23 E6              and         esp,esi
+  00000000: 23 E7              and         esp,edi
+  00000000: 23 E8              and         ebp,eax
+  00000000: 23 E9              and         ebp,ecx
+  00000000: 23 EA              and         ebp,edx
+  00000000: 23 EB              and         ebp,ebx
+  00000000: 23 EC              and         ebp,esp
+  00000000: 23 ED              and         ebp,ebp
+  00000000: 23 EE              and         ebp,esi
+  00000000: 23 EF              and         ebp,edi
+  00000000: 23 F0              and         esi,eax
+  00000000: 23 F1              and         esi,ecx
+  00000000: 23 F2              and         esi,edx
+  00000000: 23 F3              and         esi,ebx
+  00000000: 23 F4              and         esi,esp
+  00000000: 23 F5              and         esi,ebp
+  00000000: 23 F6              and         esi,esi
+  00000000: 23 F7              and         esi,edi
+  00000000: 23 F8              and         edi,eax
+  00000000: 23 F9              and         edi,ecx
+  00000000: 23 FA              and         edi,edx
+  00000000: 23 FB              and         edi,ebx
+  00000000: 23 FC              and         edi,esp
+  00000000: 23 FD              and         edi,ebp
+  00000000: 23 FE              and         edi,esi
+  00000000: 23 FF              and         edi,edi
+  00000000: 0B C0              or          eax,eax
+  00000000: 0B C1              or          eax,ecx
+  00000000: 0B C2              or          eax,edx
+  00000000: 0B C3              or          eax,ebx
+  00000000: 0B C4              or          eax,esp
+  00000000: 0B C5              or          eax,ebp
+  00000000: 0B C6              or          eax,esi
+  00000000: 0B C7              or          eax,edi
+  00000000: 0B C8              or          ecx,eax
+  00000000: 0B C9              or          ecx,ecx
+  00000000: 0B CA              or          ecx,edx
+  00000000: 0B CB              or          ecx,ebx
+  00000000: 0B CC              or          ecx,esp
+  00000000: 0B CD              or          ecx,ebp
+  00000000: 0B CE              or          ecx,esi
+  00000000: 0B CF              or          ecx,edi
+  00000000: 0B D0              or          edx,eax
+  00000000: 0B D1              or          edx,ecx
+  00000000: 0B D2              or          edx,edx
+  00000000: 0B D3              or          edx,ebx
+  00000000: 0B D4              or          edx,esp
+  00000000: 0B D5              or          edx,ebp
+  00000000: 0B D6              or          edx,esi
+  00000000: 0B D7              or          edx,edi
+  00000000: 0B D8              or          ebx,eax
+  00000000: 0B D9              or          ebx,ecx
+  00000000: 0B DA              or          ebx,edx
+  00000000: 0B DB              or          ebx,ebx
+  00000000: 0B DC              or          ebx,esp
+  00000000: 0B DD              or          ebx,ebp
+  00000000: 0B DE              or          ebx,esi
+  00000000: 0B DF              or          ebx,edi
+  00000000: 0B E0              or          esp,eax
+  00000000: 0B E1              or          esp,ecx
+  00000000: 0B E2              or          esp,edx
+  00000000: 0B E3              or          esp,ebx
+  00000000: 0B E4              or          esp,esp
+  00000000: 0B E5              or          esp,ebp
+  00000000: 0B E6              or          esp,esi
+  00000000: 0B E7              or          esp,edi
+  00000000: 0B E8              or          ebp,eax
+  00000000: 0B E9              or          ebp,ecx
+  00000000: 0B EA              or          ebp,edx
+  00000000: 0B EB              or          ebp,ebx
+  00000000: 0B EC              or          ebp,esp
+  00000000: 0B ED              or          ebp,ebp
+  00000000: 0B EE              or          ebp,esi
+  00000000: 0B EF              or          ebp,edi
+  00000000: 0B F0              or          esi,eax
+  00000000: 0B F1              or          esi,ecx
+  00000000: 0B F2              or          esi,edx
+  00000000: 0B F3              or          esi,ebx
+  00000000: 0B F4              or          esi,esp
+  00000000: 0B F5              or          esi,ebp
+  00000000: 0B F6              or          esi,esi
+  00000000: 0B F7              or          esi,edi
+  00000000: 0B F8              or          edi,eax
+  00000000: 0B F9              or          edi,ecx
+  00000000: 0B FA              or          edi,edx
+  00000000: 0B FB              or          edi,ebx
+  00000000: 0B FC              or          edi,esp
+  00000000: 0B FD              or          edi,ebp
+  00000000: 0B FE              or          edi,esi
+  00000000: 0B FF              or          edi,edi
+  00000000: 33 C0              xor         eax,eax
+  00000000: 33 C1              xor         eax,ecx
+  00000000: 33 C2              xor         eax,edx
+  00000000: 33 C3              xor         eax,ebx
+  00000000: 33 C4              xor         eax,esp
+  00000000: 33 C5              xor         eax,ebp
+  00000000: 33 C6              xor         eax,esi
+  00000000: 33 C7              xor         eax,edi
+  00000000: 33 C8              xor         ecx,eax
+  00000000: 33 C9              xor         ecx,ecx
+  00000000: 33 CA              xor         ecx,edx
+  00000000: 33 CB              xor         ecx,ebx
+  00000000: 33 CC              xor         ecx,esp
+  00000000: 33 CD              xor         ecx,ebp
+  00000000: 33 CE              xor         ecx,esi
+  00000000: 33 CF              xor         ecx,edi
+  00000000: 33 D0              xor         edx,eax
+  00000000: 33 D1              xor         edx,ecx
+  00000000: 33 D2              xor         edx,edx
+  00000000: 33 D3              xor         edx,ebx
+  00000000: 33 D4              xor         edx,esp
+  00000000: 33 D5              xor         edx,ebp
+  00000000: 33 D6              xor         edx,esi
+  00000000: 33 D7              xor         edx,edi
+  00000000: 33 D8              xor         ebx,eax
+  00000000: 33 D9              xor         ebx,ecx
+  00000000: 33 DA              xor         ebx,edx
+  00000000: 33 DB              xor         ebx,ebx
+  00000000: 33 DC              xor         ebx,esp
+  00000000: 33 DD              xor         ebx,ebp
+  00000000: 33 DE              xor         ebx,esi
+  00000000: 33 DF              xor         ebx,edi
+  00000000: 33 E0              xor         esp,eax
+  00000000: 33 E1              xor         esp,ecx
+  00000000: 33 E2              xor         esp,edx
+  00000000: 33 E3              xor         esp,ebx
+  00000000: 33 E4              xor         esp,esp
+  00000000: 33 E5              xor         esp,ebp
+  00000000: 33 E6              xor         esp,esi
+  00000000: 33 E7              xor         esp,edi
+  00000000: 33 E8              xor         ebp,eax
+  00000000: 33 E9              xor         ebp,ecx
+  00000000: 33 EA              xor         ebp,edx
+  00000000: 33 EB              xor         ebp,ebx
+  00000000: 33 EC              xor         ebp,esp
+  00000000: 33 ED              xor         ebp,ebp
+  00000000: 33 EE              xor         ebp,esi
+  00000000: 33 EF              xor         ebp,edi
+  00000000: 33 F0              xor         esi,eax
+  00000000: 33 F1              xor         esi,ecx
+  00000000: 33 F2              xor         esi,edx
+  00000000: 33 F3              xor         esi,ebx
+  00000000: 33 F4              xor         esi,esp
+  00000000: 33 F5              xor         esi,ebp
+  00000000: 33 F6              xor         esi,esi
+  00000000: 33 F7              xor         esi,edi
+  00000000: 33 F8              xor         edi,eax
+  00000000: 33 F9              xor         edi,ecx
+  00000000: 33 FA              xor         edi,edx
+  00000000: 33 FB              xor         edi,ebx
+  00000000: 33 FC              xor         edi,esp
+  00000000: 33 FD              xor         edi,ebp
+  00000000: 33 FE              xor         edi,esi
+  00000000: 33 FF              xor         edi,edi
+  00000000: 3B C0              cmp         eax,eax
+  00000000: 3B C1              cmp         eax,ecx
+  00000000: 3B C2              cmp         eax,edx
+  00000000: 3B C3              cmp         eax,ebx
+  00000000: 3B C4              cmp         eax,esp
+  00000000: 3B C5              cmp         eax,ebp
+  00000000: 3B C6              cmp         eax,esi
+  00000000: 3B C7              cmp         eax,edi
+  00000000: 3B C8              cmp         ecx,eax
+  00000000: 3B C9              cmp         ecx,ecx
+  00000000: 3B CA              cmp         ecx,edx
+  00000000: 3B CB              cmp         ecx,ebx
+  00000000: 3B CC              cmp         ecx,esp
+  00000000: 3B CD              cmp         ecx,ebp
+  00000000: 3B CE              cmp         ecx,esi
+  00000000: 3B CF              cmp         ecx,edi
+  00000000: 3B D0              cmp         edx,eax
+  00000000: 3B D1              cmp         edx,ecx
+  00000000: 3B D2              cmp         edx,edx
+  00000000: 3B D3              cmp         edx,ebx
+  00000000: 3B D4              cmp         edx,esp
+  00000000: 3B D5              cmp         edx,ebp
+  00000000: 3B D6              cmp         edx,esi
+  00000000: 3B D7              cmp         edx,edi
+  00000000: 3B D8              cmp         ebx,eax
+  00000000: 3B D9              cmp         ebx,ecx
+  00000000: 3B DA              cmp         ebx,edx
+  00000000: 3B DB              cmp         ebx,ebx
+  00000000: 3B DC              cmp         ebx,esp
+  00000000: 3B DD              cmp         ebx,ebp
+  00000000: 3B DE              cmp         ebx,esi
+  00000000: 3B DF              cmp         ebx,edi
+  00000000: 3B E0              cmp         esp,eax
+  00000000: 3B E1              cmp         esp,ecx
+  00000000: 3B E2              cmp         esp,edx
+  00000000: 3B E3              cmp         esp,ebx
+  00000000: 3B E4              cmp         esp,esp
+  00000000: 3B E5              cmp         esp,ebp
+  00000000: 3B E6              cmp         esp,esi
+  00000000: 3B E7              cmp         esp,edi
+  00000000: 3B E8              cmp         ebp,eax
+  00000000: 3B E9              cmp         ebp,ecx
+  00000000: 3B EA              cmp         ebp,edx
+  00000000: 3B EB              cmp         ebp,ebx
+  00000000: 3B EC              cmp         ebp,esp
+  00000000: 3B ED              cmp         ebp,ebp
+  00000000: 3B EE              cmp         ebp,esi
+  00000000: 3B EF              cmp         ebp,edi
+  00000000: 3B F0              cmp         esi,eax
+  00000000: 3B F1              cmp         esi,ecx
+  00000000: 3B F2              cmp         esi,edx
+  00000000: 3B F3              cmp         esi,ebx
+  00000000: 3B F4              cmp         esi,esp
+  00000000: 3B F5              cmp         esi,ebp
+  00000000: 3B F6              cmp         esi,esi
+  00000000: 3B F7              cmp         esi,edi
+  00000000: 3B F8              cmp         edi,eax
+  00000000: 3B F9              cmp         edi,ecx
+  00000000: 3B FA              cmp         edi,edx
+  00000000: 3B FB              cmp         edi,ebx
+  00000000: 3B FC              cmp         edi,esp
+  00000000: 3B FD              cmp         edi,ebp
+  00000000: 3B FE              cmp         edi,esi
+  00000000: 3B FF              cmp         edi,edi
+  00000000: 40                 inc         eax
+  00000000: 41                 inc         ecx
+  00000000: 42                 inc         edx
+  00000000: 43                 inc         ebx
+  00000000: 44                 inc         esp
+  00000000: 45                 inc         ebp
+  00000000: 46                 inc         esi
+  00000000: 47                 inc         edi
+  00000000: 48                 dec         eax
+  00000000: 49                 dec         ecx
+  00000000: 4A                 dec         edx
+  00000000: 4B                 dec         ebx
+  00000000: 4C                 dec         esp
+  00000000: 4D                 dec         ebp
+  00000000: 4E                 dec         esi
+  00000000: 4F                 dec         edi
+  00000000: F7 D0              not         eax
+  00000000: F7 D1              not         ecx
+  00000000: F7 D2              not         edx
+  00000000: F7 D3              not         ebx
+  00000000: F7 D4              not         esp
+  00000000: F7 D5              not         ebp
+  00000000: F7 D6              not         esi
+  00000000: F7 D7              not         edi
+  00000000: F7 D8              neg         eax
+  00000000: F7 D9              neg         ecx
+  00000000: F7 DA              neg         edx
+  00000000: F7 DB              neg         ebx
+  00000000: F7 DC              neg         esp
+  00000000: F7 DD              neg         ebp
+  00000000: F7 DE              neg         esi
+  00000000: F7 DF              neg         edi
+  00000000: F7 E0              mul         eax,eax
+  00000000: F7 E1              mul         eax,ecx
+  00000000: F7 E2              mul         eax,edx
+  00000000: F7 E3              mul         eax,ebx
+  00000000: F7 E4              mul         eax,esp
+  00000000: F7 E5              mul         eax,ebp
+  00000000: F7 E6              mul         eax,esi
+  00000000: F7 E7              mul         eax,edi
+  00000000: F7 E8              imul        eax
+  00000000: F7 E9              imul        ecx
+  00000000: F7 EA              imul        edx
+  00000000: F7 EB              imul        ebx
+  00000000: F7 EC              imul        esp
+  00000000: F7 ED              imul        ebp
+  00000000: F7 EE              imul        esi
+  00000000: F7 EF              imul        edi
+  00000000: F7 F0              div         eax,eax
+  00000000: F7 F1              div         eax,ecx
+  00000000: F7 F2              div         eax,edx
+  00000000: F7 F3              div         eax,ebx
+  00000000: F7 F4              div         eax,esp
+  00000000: F7 F5              div         eax,ebp
+  00000000: F7 F6              div         eax,esi
+  00000000: F7 F7              div         eax,edi
+  00000000: F7 F8              idiv        eax,eax
+  00000000: F7 F9              idiv        eax,ecx
+  00000000: F7 FA              idiv        eax,edx
+  00000000: F7 FB              idiv        eax,ebx
+  00000000: F7 FC              idiv        eax,esp
+  00000000: F7 FD              idiv        eax,ebp
+  00000000: F7 FE              idiv        eax,esi
+  00000000: F7 FF              idiv        eax,edi
+  00000000: 99                 cdq
+  00000000: D3 E0              shl         eax,cl
+  00000000: D3 E1              shl         ecx,cl
+  00000000: D3 E2              shl         edx,cl
+  00000000: D3 E3              shl         ebx,cl
+  00000000: D3 E4              shl         esp,cl
+  00000000: D3 E5              shl         ebp,cl
+  00000000: D3 E6              shl         esi,cl
+  00000000: D3 E7              shl         edi,cl
+  00000000: D3 E8              shr         eax,cl
+  00000000: D3 E9              shr         ecx,cl
+  00000000: D3 EA              shr         edx,cl
+  00000000: D3 EB              shr         ebx,cl
+  00000000: D3 EC              shr         esp,cl
+  00000000: D3 ED              shr         ebp,cl
+  00000000: D3 EE              shr         esi,cl
+  00000000: D3 EF              shr         edi,cl
+  00000000: D3 F8              sar         eax,cl
+  00000000: D3 F9              sar         ecx,cl
+  00000000: D3 FA              sar         edx,cl
+  00000000: D3 FB              sar         ebx,cl
+  00000000: D3 FC              sar         esp,cl
+  00000000: D3 FD              sar         ebp,cl
+  00000000: D3 FE              sar         esi,cl
+  00000000: D3 FF              sar         edi,cl
+  00000000: C1 E0 00           shl         eax,0
+  00000000: D1 E0              shl         eax,1
+  00000000: C1 E0 02           shl         eax,2
+  00000000: C1 E0 03           shl         eax,3
+  00000000: C1 E0 20           shl         eax,20h
+  00000000: C1 E0 40           shl         eax,40h
+  00000000: C1 E0 41           shl         eax,41h
+  00000000: C1 E0 FF           shl         eax,0FFh
+  00000000: C1 E1 00           shl         ecx,0
+  00000000: D1 E1              shl         ecx,1
+  00000000: C1 E1 02           shl         ecx,2
+  00000000: C1 E1 03           shl         ecx,3
+  00000000: C1 E1 20           shl         ecx,20h
+  00000000: C1 E1 40           shl         ecx,40h
+  00000000: C1 E1 41           shl         ecx,41h
+  00000000: C1 E1 FF           shl         ecx,0FFh
+  00000000: C1 E2 00           shl         edx,0
+  00000000: D1 E2              shl         edx,1
+  00000000: C1 E2 02           shl         edx,2
+  00000000: C1 E2 03           shl         edx,3
+  00000000: C1 E2 20           shl         edx,20h
+  00000000: C1 E2 40           shl         edx,40h
+  00000000: C1 E2 41           shl         edx,41h
+  00000000: C1 E2 FF           shl         edx,0FFh
+  00000000: C1 E3 00           shl         ebx,0
+  00000000: D1 E3              shl         ebx,1
+  00000000: C1 E3 02           shl         ebx,2
+  00000000: C1 E3 03           shl         ebx,3
+  00000000: C1 E3 20           shl         ebx,20h
+  00000000: C1 E3 40           shl         ebx,40h
+  00000000: C1 E3 41           shl         ebx,41h
+  00000000: C1 E3 FF           shl         ebx,0FFh
+  00000000: C1 E4 00           shl         esp,0
+  00000000: D1 E4              shl         esp,1
+  00000000: C1 E4 02           shl         esp,2
+  00000000: C1 E4 03           shl         esp,3
+  00000000: C1 E4 20           shl         esp,20h
+  00000000: C1 E4 40           shl         esp,40h
+  00000000: C1 E4 41           shl         esp,41h
+  00000000: C1 E4 FF           shl         esp,0FFh
+  00000000: C1 E5 00           shl         ebp,0
+  00000000: D1 E5              shl         ebp,1
+  00000000: C1 E5 02           shl         ebp,2
+  00000000: C1 E5 03           shl         ebp,3
+  00000000: C1 E5 20           shl         ebp,20h
+  00000000: C1 E5 40           shl         ebp,40h
+  00000000: C1 E5 41           shl         ebp,41h
+  00000000: C1 E5 FF           shl         ebp,0FFh
+  00000000: C1 E6 00           shl         esi,0
+  00000000: D1 E6              shl         esi,1
+  00000000: C1 E6 02           shl         esi,2
+  00000000: C1 E6 03           shl         esi,3
+  00000000: C1 E6 20           shl         esi,20h
+  00000000: C1 E6 40           shl         esi,40h
+  00000000: C1 E6 41           shl         esi,41h
+  00000000: C1 E6 FF           shl         esi,0FFh
+  00000000: C1 E7 00           shl         edi,0
+  00000000: D1 E7              shl         edi,1
+  00000000: C1 E7 02           shl         edi,2
+  00000000: C1 E7 03           shl         edi,3
+  00000000: C1 E7 20           shl         edi,20h
+  00000000: C1 E7 40           shl         edi,40h
+  00000000: C1 E7 41           shl         edi,41h
+  00000000: C1 E7 FF           shl         edi,0FFh
+  00000000: C1 E8 00           shr         eax,0
+  00000000: D1 E8              shr         eax,1
+  00000000: C1 E8 02           shr         eax,2
+  00000000: C1 E8 03           shr         eax,3
+  00000000: C1 E8 20           shr         eax,20h
+  00000000: C1 E8 40           shr         eax,40h
+  00000000: C1 E8 41           shr         eax,41h
+  00000000: C1 E8 FF           shr         eax,0FFh
+  00000000: C1 E9 00           shr         ecx,0
+  00000000: D1 E9              shr         ecx,1
+  00000000: C1 E9 02           shr         ecx,2
+  00000000: C1 E9 03           shr         ecx,3
+  00000000: C1 E9 20           shr         ecx,20h
+  00000000: C1 E9 40           shr         ecx,40h
+  00000000: C1 E9 41           shr         ecx,41h
+  00000000: C1 E9 FF           shr         ecx,0FFh
+  00000000: C1 EA 00           shr         edx,0
+  00000000: D1 EA              shr         edx,1
+  00000000: C1 EA 02           shr         edx,2
+  00000000: C1 EA 03           shr         edx,3
+  00000000: C1 EA 20           shr         edx,20h
+  00000000: C1 EA 40           shr         edx,40h
+  00000000: C1 EA 41           shr         edx,41h
+  00000000: C1 EA FF           shr         edx,0FFh
+  00000000: C1 EB 00           shr         ebx,0
+  00000000: D1 EB              shr         ebx,1
+  00000000: C1 EB 02           shr         ebx,2
+  00000000: C1 EB 03           shr         ebx,3
+  00000000: C1 EB 20           shr         ebx,20h
+  00000000: C1 EB 40           shr         ebx,40h
+  00000000: C1 EB 41           shr         ebx,41h
+  00000000: C1 EB FF           shr         ebx,0FFh
+  00000000: C1 EC 00           shr         esp,0
+  00000000: D1 EC              shr         esp,1
+  00000000: C1 EC 02           shr         esp,2
+  00000000: C1 EC 03           shr         esp,3
+  00000000: C1 EC 20           shr         esp,20h
+  00000000: C1 EC 40           shr         esp,40h
+  00000000: C1 EC 41           shr         esp,41h
+  00000000: C1 EC FF           shr         esp,0FFh
+  00000000: C1 ED 00           shr         ebp,0
+  00000000: D1 ED              shr         ebp,1
+  00000000: C1 ED 02           shr         ebp,2
+  00000000: C1 ED 03           shr         ebp,3
+  00000000: C1 ED 20           shr         ebp,20h
+  00000000: C1 ED 40           shr         ebp,40h
+  00000000: C1 ED 41           shr         ebp,41h
+  00000000: C1 ED FF           shr         ebp,0FFh
+  00000000: C1 EE 00           shr         esi,0
+  00000000: D1 EE              shr         esi,1
+  00000000: C1 EE 02           shr         esi,2
+  00000000: C1 EE 03           shr         esi,3
+  00000000: C1 EE 20           shr         esi,20h
+  00000000: C1 EE 40           shr         esi,40h
+  00000000: C1 EE 41           shr         esi,41h
+  00000000: C1 EE FF           shr         esi,0FFh
+  00000000: C1 EF 00           shr         edi,0
+  00000000: D1 EF              shr         edi,1
+  00000000: C1 EF 02           shr         edi,2
+  00000000: C1 EF 03           shr         edi,3
+  00000000: C1 EF 20           shr         edi,20h
+  00000000: C1 EF 40           shr         edi,40h
+  00000000: C1 EF 41           shr         edi,41h
+  00000000: C1 EF FF           shr         edi,0FFh
+  00000000: C1 F8 00           sar         eax,0
+  00000000: D1 F8              sar         eax,1
+  00000000: C1 F8 02           sar         eax,2
+  00000000: C1 F8 03           sar         eax,3
+  00000000: C1 F8 20           sar         eax,20h
+  00000000: C1 F8 40           sar         eax,40h
+  00000000: C1 F8 41           sar         eax,41h
+  00000000: C1 F8 FF           sar         eax,0FFh
+  00000000: C1 F9 00           sar         ecx,0
+  00000000: D1 F9              sar         ecx,1
+  00000000: C1 F9 02           sar         ecx,2
+  00000000: C1 F9 03           sar         ecx,3
+  00000000: C1 F9 20           sar         ecx,20h
+  00000000: C1 F9 40           sar         ecx,40h
+  00000000: C1 F9 41           sar         ecx,41h
+  00000000: C1 F9 FF           sar         ecx,0FFh
+  00000000: C1 FA 00           sar         edx,0
+  00000000: D1 FA              sar         edx,1
+  00000000: C1 FA 02           sar         edx,2
+  00000000: C1 FA 03           sar         edx,3
+  00000000: C1 FA 20           sar         edx,20h
+  00000000: C1 FA 40           sar         edx,40h
+  00000000: C1 FA 41           sar         edx,41h
+  00000000: C1 FA FF           sar         edx,0FFh
+  00000000: C1 FB 00           sar         ebx,0
+  00000000: D1 FB              sar         ebx,1
+  00000000: C1 FB 02           sar         ebx,2
+  00000000: C1 FB 03           sar         ebx,3
+  00000000: C1 FB 20           sar         ebx,20h
+  00000000: C1 FB 40           sar         ebx,40h
+  00000000: C1 FB 41           sar         ebx,41h
+  00000000: C1 FB FF           sar         ebx,0FFh
+  00000000: C1 FC 00           sar         esp,0
+  00000000: D1 FC              sar         esp,1
+  00000000: C1 FC 02           sar         esp,2
+  00000000: C1 FC 03           sar         esp,3
+  00000000: C1 FC 20           sar         esp,20h
+  00000000: C1 FC 40           sar         esp,40h
+  00000000: C1 FC 41           sar         esp,41h
+  00000000: C1 FC FF           sar         esp,0FFh
+  00000000: C1 FD 00           sar         ebp,0
+  00000000: D1 FD              sar         ebp,1
+  00000000: C1 FD 02           sar         ebp,2
+  00000000: C1 FD 03           sar         ebp,3
+  00000000: C1 FD 20           sar         ebp,20h
+  00000000: C1 FD 40           sar         ebp,40h
+  00000000: C1 FD 41           sar         ebp,41h
+  00000000: C1 FD FF           sar         ebp,0FFh
+  00000000: C1 FE 00           sar         esi,0
+  00000000: D1 FE              sar         esi,1
+  00000000: C1 FE 02           sar         esi,2
+  00000000: C1 FE 03           sar         esi,3
+  00000000: C1 FE 20           sar         esi,20h
+  00000000: C1 FE 40           sar         esi,40h
+  00000000: C1 FE 41           sar         esi,41h
+  00000000: C1 FE FF           sar         esi,0FFh
+  00000000: C1 FF 00           sar         edi,0
+  00000000: D1 FF              sar         edi,1
+  00000000: C1 FF 02           sar         edi,2
+  00000000: C1 FF 03           sar         edi,3
+  00000000: C1 FF 20           sar         edi,20h
+  00000000: C1 FF 40           sar         edi,40h
+  00000000: C1 FF 41           sar         edi,41h
+  00000000: C1 FF FF           sar         edi,0FFh
+  00000000: 50                 push        eax
+  00000000: 51                 push        ecx
+  00000000: 52                 push        edx
+  00000000: 53                 push        ebx
+  00000000: 54                 push        esp
+  00000000: 55                 push        ebp
+  00000000: 56                 push        esi
+  00000000: 57                 push        edi
+  00000000: 58                 pop         eax
+  00000000: 59                 pop         ecx
+  00000000: 5A                 pop         edx
+  00000000: 5B                 pop         ebx
+  00000000: 5C                 pop         esp
+  00000000: 5D                 pop         ebp
+  00000000: 5E                 pop         esi
+  00000000: 5F                 pop         edi
+  00000000: FF D0              call        eax
+  00000000: FF D1              call        ecx
+  00000000: FF D2              call        edx
+  00000000: FF D3              call        ebx
+  00000000: FF D4              call        esp
+  00000000: FF D5              call        ebp
+  00000000: FF D6              call        esi
+  00000000: FF D7              call        edi
+  00000000: C3                 ret
+  00000000: C2 01 00           ret         1
+  00000000: C2 02 00           ret         2
+  00000000: C2 04 00           ret         4
+  00000000: C2 10 00           ret         10h
+  00000000: C2 00 01           ret         100h
+  00000000: EB FE              jmp         main
+  00000000: EB 00              jmp         00000002
+  00000000: EB 05              jmp         00000007
+  00000000: EB 0A              jmp         0000000C
+  00000000: EB 64              jmp         00000066
+  00000000: E9 C8 00 00 00     jmp         000000CD
+  00000000: E9 2C 01 00 00     jmp         00000131
+  00000000: 72 FE              jb          main
+  00000000: 72 00              jb          00000002
+  00000000: 72 05              jb          00000007
+  00000000: 72 0A              jb          0000000C
+  00000000: 72 64              jb          00000066
+  00000000: 0F 82 C8 00 00 00  jb          000000CE
+  00000000: 0F 82 2C 01 00 00  jb          00000132
+  00000000: 73 FE              jae         main
+  00000000: 73 00              jae         00000002
+  00000000: 73 05              jae         00000007
+  00000000: 73 0A              jae         0000000C
+  00000000: 73 64              jae         00000066
+  00000000: 0F 83 C8 00 00 00  jae         000000CE
+  00000000: 0F 83 2C 01 00 00  jae         00000132
+  00000000: 74 FE              je          main
+  00000000: 74 00              je          00000002
+  00000000: 74 05              je          00000007
+  00000000: 74 0A              je          0000000C
+  00000000: 74 64              je          00000066
+  00000000: 0F 84 C8 00 00 00  je          000000CE
+  00000000: 0F 84 2C 01 00 00  je          00000132
+  00000000: 75 FE              jne         main
+  00000000: 75 00              jne         00000002
+  00000000: 75 05              jne         00000007
+  00000000: 75 0A              jne         0000000C
+  00000000: 75 64              jne         00000066
+  00000000: 0F 85 C8 00 00 00  jne         000000CE
+  00000000: 0F 85 2C 01 00 00  jne         00000132
+  00000000: 76 FE              jbe         main
+  00000000: 76 00              jbe         00000002
+  00000000: 76 05              jbe         00000007
+  00000000: 76 0A              jbe         0000000C
+  00000000: 76 64              jbe         00000066
+  00000000: 0F 86 C8 00 00 00  jbe         000000CE
+  00000000: 0F 86 2C 01 00 00  jbe         00000132
+  00000000: 77 FE              ja          main
+  00000000: 77 00              ja          00000002
+  00000000: 77 05              ja          00000007
+  00000000: 77 0A              ja          0000000C
+  00000000: 77 64              ja          00000066
+  00000000: 0F 87 C8 00 00 00  ja          000000CE
+  00000000: 0F 87 2C 01 00 00  ja          00000132
+  00000000: 7C FE              jl          main
+  00000000: 7C 00              jl          00000002
+  00000000: 7C 05              jl          00000007
+  00000000: 7C 0A              jl          0000000C
+  00000000: 7C 64              jl          00000066
+  00000000: 0F 8C C8 00 00 00  jl          000000CE
+  00000000: 0F 8C 2C 01 00 00  jl          00000132
+  00000000: 7D FE              jge         main
+  00000000: 7D 00              jge         00000002
+  00000000: 7D 05              jge         00000007
+  00000000: 7D 0A              jge         0000000C
+  00000000: 7D 64              jge         00000066
+  00000000: 0F 8D C8 00 00 00  jge         000000CE
+  00000000: 0F 8D 2C 01 00 00  jge         00000132
+  00000000: 7E FE              jle         main
+  00000000: 7E 00              jle         00000002
+  00000000: 7E 05              jle         00000007
+  00000000: 7E 0A              jle         0000000C
+  00000000: 7E 64              jle         00000066
+  00000000: 0F 8E C8 00 00 00  jle         000000CE
+  00000000: 0F 8E 2C 01 00 00  jle         00000132
+  00000000: 7F FE              jg          main
+  00000000: 7F 00              jg          00000002
+  00000000: 7F 05              jg          00000007
+  00000000: 7F 0A              jg          0000000C
+  00000000: 7F 64              jg          00000066
+  00000000: 0F 8F C8 00 00 00  jg          000000CE
+  00000000: 0F 8F 2C 01 00 00  jg          00000132

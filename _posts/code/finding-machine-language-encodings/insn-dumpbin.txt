@@ -1,0 +1,20 @@
+Microsoft (R) COFF/PE Dumper Version 10.00.40219.01
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file insn.obj
+
+File Type: COFF OBJECT
+
+example:
+  00000000: B8 78 56 34 12     mov         eax,12345678h
+  00000005: 90                 nop
+  00000006: 90                 nop
+  00000007: 90                 nop
+  00000008: C3                 ret
+
+  Summary
+
+           0 .data
+          A0 .debug$S
+           9 .text
