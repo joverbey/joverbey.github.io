@@ -2,7 +2,7 @@
 layout: post
 title:  "Finding Machine Language Encodings"
 cover:  empty.jpg
-date:   2017-02-15 12:00:00 ET
+date:   2017-02-15 11:59:59 ET
 categories: assembly
 ---
 
