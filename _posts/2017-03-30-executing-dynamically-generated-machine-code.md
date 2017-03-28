@@ -56,9 +56,9 @@ The MX bit is part of the page table, which means that memory protections are us
 
 To store machine code in memory and then execute it:
 1. **Allocate a new page of memory, setting its protections to allow write access.**  This is done via the [mmap(2)](https://linux.die.net/man/2/mmap) system call on Linux/macOS and [VirtualAlloc](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366887.aspx) on Windows.  These system calls allocate full pages of memory, and the returned pointer is guaranteed to be page-aligned, suitable for passing to mprotect.
-2. **Write the machine code into the newly allocated page.**
-3. **Change the protections for the newly allocated page to read+execute.**  Generally speaking, a page not be writable if it is executable.
-4. **On Windows, flush the instruction cache** by invoking [FlushInstructionCache](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679350.aspx).  Your code will probably work without it, but the documentation for VirtualProtect requires it.
+2. **Copy the bytes of machine code into the newly allocated page.**
+3. **Change the protections for the newly allocated page to read+execute.**  Generally speaking, a page should not be writable if it is executable.
+4. **On Windows, flush the instruction cache** by invoking [FlushInstructionCache](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679350.aspx).  Your code will probably work without it, but the documentation for VirtualProtect dictates it.
 5. **Set a function pointer to an address in the newly allocated page, then invoke the function at that address.**
 6. **When you are finished, free the page** using [munmap(2)](https://linux.die.net/man/2/munmap) or [VirtualFree](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366892.aspx).
 
