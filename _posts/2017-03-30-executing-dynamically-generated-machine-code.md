@@ -52,7 +52,7 @@ Of course, a JIT is one of the rare cases where a program *wants* to write data 
 
 ## Allocating memory and making it executable
 
-The MX bit is part of the page table, which means that memory protections are usually set on a per-page basis.  Memory protections for a particular page are changed using the [mprotect(2)](https://linux.die.net/man/2/mprotect) system call on Linux and macOS, and they're changed using [VirtualProtect](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366898.aspx) on Windows.
+The NX bit is part of the page table, which means that memory protections are usually set on a per-page basis.  Memory protections for a particular page are changed using the [mprotect(2)](https://linux.die.net/man/2/mprotect) system call on Linux and macOS, and they're changed using [VirtualProtect](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366898.aspx) on Windows.
 
 To store machine code in memory and then execute it:
 1. **Allocate a new page of memory, setting its protections to allow write access.**  This is done via the [mmap(2)](https://linux.die.net/man/2/mmap) system call on Linux/macOS and [VirtualAlloc](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366887.aspx) on Windows.  These system calls allocate full pages of memory, and the returned pointer is guaranteed to be page-aligned, suitable for passing to mprotect.
