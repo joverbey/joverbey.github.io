@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Executing Dynamically Generated Machine Code: The Start of a JIT"
-cover: empty.jpg
+title:  "Executing Dynamically Generated Machine Code: The Start of a JIT"
+cover:  empty.jpg
 date:   2017-03-30 11:59:59 ET
 categories: assembly compilers jit
 ---
