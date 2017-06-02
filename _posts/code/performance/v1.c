@@ -6,8 +6,10 @@
 #define MEGABYTE 1048576
 #define SIZE (1*MEGABYTE)
 
+/* We will measure two ways to clear this buffer */
 char buf[SIZE];
 
+/* Clear buf using a simple for-loop */
 static void setBuf() {
 	for (int i = 0; i < SIZE; i++) {
 		buf[i] = 0;
