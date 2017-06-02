@@ -18,7 +18,8 @@ html, body {
 body {
   color: #4a4a4a;
   background-color: #fafbfc;
-  font-family: 'Raleway', Arial, sans-serif;
+  /* font-family: 'Raleway', Arial, sans-serif; */
+  font-family: 'Crimson Text', Garamond, 'Times New Roman', Times, serif;
   font-weight: 400;
   font-size: 1em;
   overflow: hidden;
@@ -189,14 +190,16 @@ a:hover {
   border: 0;
   background-color: #eef;
   padding: 0 .4em;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 14px;
+  /* font-family: 'Source Code Pro', monospace; */
+  font-family: 'Overpass Mono', 'Courier New', monospace;
+  /* font-size: 14px; */
+  font-size: 1.0em;
   line-height: 1.2em;
 }
 
 .post p {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-size: 17px;
+  /* font-family: 'Source Sans Pro', Arial, sans-serif; */
+  font-family: 'Crimson Text', Garamond, 'Times New Roman', Times, serif;
   margin-top: 0.75em;
   margin-bottom: 0.75em;
   text-align: justify;
@@ -255,6 +258,7 @@ a:hover {
   padding-left: 11em;
   padding-right: 2.125em;
   border-right: 1px solid #e7e7e7;
+  font-family: 'Raleway', Arial, sans-serif;
 }
 
 .content {
