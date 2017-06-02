@@ -38,6 +38,6 @@ int main() {
 	}
 	printf(" seconds\n");
 
-	printf("Timer resolution is %0.15f\n", omp_get_wtick());
+	printf("Timer resolution is %0.15f seconds\n", omp_get_wtick());
 	return 0;
 }

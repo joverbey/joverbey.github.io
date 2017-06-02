@@ -108,7 +108,7 @@ printf("Timer resolution is %0.15f seconds\n", omp_get_wtick());
 
 This produces
 ```
-Timer resolution is 0.010000000000000
+Timer resolution is 0.010000000000000 seconds
 ```
 
 In case you're wondering what resolution means, exactly, it works like this.  Suppose you look out your window every Monday at 8 am -- i.e., exactly once per week.  One week, a building is starting to be constructed.  60 weeks later, it's done.  You can say for sure that it took somewhere between 59 and 60 weeks to construct, but if you only look out your window once a week, you can't give a more accurate description than that.  What if someone demands to know how long it took in days?  Pick a number between 413 and 420.  You can't say for sure, because you weren't observing it on a daily basis.
@@ -128,7 +128,7 @@ For the purpose of illustration, let's assume that `omp_get_wtick` is correct, a
 ```
 setBuf:  0.09 0.12 0.12 0.10 0.09 seconds
 memset:  0.03 0.03 0.03 0.03 0.03 seconds
-Timer resolution is 0.010000
+Timer resolution is 0.010000000000000 seconds
 ```
 
 Now, it's fairly obvious that `memset` is faster, but there's a better way to make that argument.
@@ -157,7 +157,7 @@ This is when it's helpful to have statistics.  If we took more measurements, and
 
 Let's return to the last example: determining if `setBuf` or `memset` is faster.
 
-On average, `setBuf` takes (0.09 + 0.12 + 0.12 + 0.10 + 0.09) / 5 = 0.104 seconds, while `memset` takes 0.03 seconds.  What we really want to know is this: *Is the average time taken by `setBuf` significantly different from the average time taken by `memset`?  In this context, we mean "statistically significant."
+On average, `setBuf` takes (0.09 + 0.12 + 0.12 + 0.10 + 0.09) / 5 = 0.104 seconds, while `memset` takes 0.03 seconds.  What we really want to know is this: *Is the average time taken by `setBuf` significantly different from the average time taken by `memset`?*  In this context, we mean "statistically significant."
 
 To answer this question, we'll use Welch's t-test.  You can do it easily in Python:
 
@@ -170,7 +170,7 @@ p = 0.000400683895549
 Are means significantly different (p < 0.05)?  True
 ```
 
-Since `memset`'s average is smaller, and the t-test produced a value of *p* less than 0.05, we can conclude that `memset` is (statistically) significantly faster than `setBuf`.
+Since `memset`'s average is smaller, and the t-test produced a value of *p* less than 0.05, we can conclude that `memset` is (statistically) significantly faster than `setBuf`.  (We're using a 95% confidence interval.  You may want to use a 90% or 99% confidence interval instead -- i.e., a *p*-value of 0.1 or 0.01, respectively -- depending on the situation.)
 
 In a more realistic scenario, you would probably have a larger number of measurements.  To perform a t-test, you do not need the individual measurements; as long as you know how many measurements were taken, their mean, and their standard deviation, you can perform a t-test based solely on that data.
 
@@ -221,6 +221,6 @@ Are means significantly different (p < 0.05)?  False
 
 So it turns out that `memset` is *not* significantly different from our simple loop when -O3 optimization is enabled.  The compiler's optimizer has managed to translate our naive loop into native code that is indistinguishable from `memset` in its performance.
 
-Now, this does not mean that the two are equally fast.  It simply means that a third-party observer, measuring their execution time in the same manner that we did, cannot tell the difference.  Any improvement or degradation in runtime is indistinguishable from normal variability and measurement error.
+Now, this does not mean that the two are exactly the same.  It simply means that any improvement or degradation in runtime is indistinguishable from normal variability and measurement error.  In other words, a third-party observer probably wouldn't be able to tell the difference simply by measuring their execution times as we did.
 
 So there you go.  There's something useful you can do with statistics.  Now go plant some corn.
