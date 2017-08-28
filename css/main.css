@@ -40,6 +40,18 @@ a:hover {
   border: none;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
 .separator {
   color: #555;
 }

@@ -9,5 +9,6 @@ exclude:
 include:
   - "_posts"
   - "code"
-gems:
+plugins:
   - github-pages
+markdown: kramdown
