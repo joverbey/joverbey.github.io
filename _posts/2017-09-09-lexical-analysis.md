@@ -2,7 +2,7 @@
 layout: post
 title:  "Lexical Analysis"
 cover:  empty.jpg
-date:   2017-09-01 11:59:59 ET
+date:   2017-09-09 00:00:00 ET
 categories: compilers lexers
 ---
 
@@ -21,7 +21,7 @@ var something = /* comment */
   fn()<<100.5;
 ```
 
-The lexer **partitions** the input as follows:
+The lexer partitions the input as follows:
 
 $$
 \underset{\color{gray}{1}}{\texttt{var}}\,\color{gray}{\biggr\rvert}\,%
@@ -58,7 +58,7 @@ $$
 
 Each of these strings is called a **token** or **lexeme**.  (This is not what a "lexeme" is in linguistics, but the term is used this way in computer science, for better or worse.)
 
-Now, from this example, it should be clear that there are many different "kinds" of tokens, including keywords like <tt>var</tt>, operators like <tt>&lt;&lt;</tt>, identifiers like <tt>something</tt> and <tt>fn</tt>, and literals like <tt>100.5</tt>.  Let's associate a symbolic name with each token, indicating what "kind" of token it is.  This is shown in the "Token Type" column below.
+Now, from this example, it should be clear that there are many different "kinds" of tokens, including keywords like <tt>var</tt>, operators like <tt>&lt;&lt;</tt>, identifiers like <tt>something</tt> and <tt>fn</tt>, and literals like <tt>100.5</tt>.  Let's associate a symbolic name with each token to indicate what "kind" of token it is.  This is shown in the "Token Type" column below.
 
 |-------------------|--------------------|
 | Token Type        | Lexeme             |
@@ -73,7 +73,9 @@ Now, from this example, it should be clear that there are many different "kinds"
 | T_NUMERIC_LITERAL | <tt>100.5</tt>     |
 | T_SEMICOLON       | <tt>;</tt>         |
 
-Note that the lexer identifies both <tt>x</tt> and <tt>fn</tt> as T_IDENTIFIER tokens.  In general, for every type of token, there is a **pattern** that describes all of the corresponding lexemes.  For example, in JavaScript, an _identifier_ is a string of one or more characters, where (1) every character is either a letter, decimal digit, underscore, or dollar sign; (2) the first character is not a decimal digit; and (3) the string is not a reserved word (<tt>if</tt>, <tt>while</tt>, etc.).  Any string that matches this pattern will be labeled as a T_IDENTIFIER token.  While there are many different strings that correspond to T_IDENTIFIER, many token types correspond to only one lexeme (e.g., T_EQ always corresponds to `=`, and T_VAR always corresponds to `var`).
+Note that <tt>var</tt> has its own token type -- T_VAR -- but both <tt>something</tt> and <tt>fn</tt> are identified as T_IDENTIFIER tokens.  This is to aid the parser.  The <tt>var</tt> keyword indicates the beginning of a variable definition in JavaScript, so the parser must be able to distinguish it.  However, the name of the variable (immediately after <tt>var</tt>) could be any identifier -- <tt>something</tt>, <tt>foo</tt>, <tt>Xqzvm</tt> -- and the parser doesn't care which one, as long as it's an identifier.  So, all identifiers are given the same token type: T_IDENTIFIER.
+
+In general, for every type of token, there's a **pattern** that describes all of the corresponding lexemes.  For example, in JavaScript, an _identifier_ is a string of one or more characters, where (1) every character is either a letter, decimal digit, underscore, or dollar sign; (2) the first character is not a decimal digit; and (3) the string is not a reserved word (<tt>if</tt>, <tt>while</tt>, etc.).  Any string that matches this pattern will be labeled as a T_IDENTIFIER token.  While there are many different strings that correspond to T_IDENTIFIER, many token types correspond to only one lexeme (e.g., T_EQ always corresponds to `=`, and T_VAR always corresponds to `var`).
 
 So what is the output of the lexer?  It's reasonably close to what's shown in the table above.  For each token in the input, the lexer outputs its token type (such as <tt>T_IDENTIFIER</tt>) together with any "interesting" information about that token (e.g., its source position, its text, etc.).  These "interesting" pieces of information are called the **attributes** of that token.  Sometimes, this output -- a token type together with any attributes -- is also called a "token."
 
@@ -81,10 +83,12 @@ So what is the output of the lexer?  It's reasonably close to what's shown in th
 
 Notice that we have defined "token" twice now.  At first, we said a "token" and a "lexeme" are the same thing.  In the last paragraph, we said that a "token" consists of a token type and attributes.  Unfortunately, the word is used both ways, depending on context.  When a string is tokenized (divided into tokens), the substrings (lexemes) are often called "tokens."  When a lexical analyzer tokenizes its input, it produces a sequence of "tokens" that are fed to the parser; these usually consist of a token type together with attributes.  Fortunately, it's usually clear from context which meaning is intended.  Either way, a "token" refers to a substring of the input, or information about such a string.
 
+(The Dragon Book -- the compiler textbook by Aho, Lam, Sethi, and Ullman -- uses the word "token" only when referring to \\(\langle\\)token type, attributes\\(\rangle\\) pairs; it refers to substrings of the input exclusively as "lexemes."  However, in practice, the word "token" tends to be overloaded as described above.)
+
 To summarize the terminology so far:
 * The **lexical analyzer** (also called the **lexer**, **scanner**, or **tokenizer**) is the first phase of a compiler, which reads the source text and outputs a stream of tokens.
 * The lexer partitions the input text into substrings.  Substrings for whitespace and comments are usually discarded.  Each remaining substring is called a **token** or **lexeme**.
-* For each lexeme in the input, the lexer outputs (1) the token's classification (token type, such as <tt>T_IDENTIFIER</tt>) and (2) any **attributes** (text, source position, etc.) that the parser requires to process that token.  Sometimes, the word **token** does not refer to the lexeme itself but rather to this \\(\langle\\)token type, attributes\\(\rangle\\) pair that is produced by the lexer.
+* For each lexeme in the input, the lexer outputs (1) the token type, such as <tt>T_IDENTIFIER</tt>, and (2) any **attributes** (text, source position, etc.) that may be useful in later stages of the compiler.  Sometimes, the word **token** does not refer to the lexeme itself but rather to this \\(\langle\\)token type, attributes\\(\rangle\\) pair that is produced by the lexer.
 * Typically, for each type of token, there is a **pattern** that describes all of the lexemes corresponding to that type of token.
 
 ## The lexer's API
@@ -96,7 +100,7 @@ For now, let's not worry about *how* a lexer tokenizes the input stream.  Instea
 Of course, the exact API provided by the lexer various from one compiler to the next.  However, a straightforward object-oriented API might look something like this.
 
 ```cpp
-enum TokenType { T_VAR, T_IDENTIFIER, T_LPAREN, ... };
+enum TokenType { T_END_OF_INPUT, T_VAR, T_IDENTIFIER, T_LPAREN, ... };
 
 class Token
 {
@@ -114,7 +118,7 @@ public:
 };
 ```
 
-When a `Lexer` is constructed, is is passed an input stream to tokenize.  The `readNextToken` function is called repeatedly; each call identifies the next token in the input, until the entire stream has been exhausted.  The `Token` object returned from this call provides the token's type (e.g., <tt>T_VAR</tt>), text, and line number (which the parser can use in error messages).
+When a `Lexer` is constructed, is is passed an input stream to tokenize.  The `readNextToken` function is called repeatedly; each call identifies the next token in the input, until the entire stream has been exhausted.  The `Token` object returned from this call provides the token's type (e.g., <tt>T_VAR</tt>), text, and line number (which the parser can use in error messages).  Often, a "special" token type (e.g., <tt>T_END_OF_INPUT</tt>) is used to indicate to the parser that tokenization is complete, and no more tokens are available.
 
 In the next post, we'll discuss Flex, which generates lexers.  Its generated API is not nearly this clean -- mostly for efficiency reasons.  Nevertheless, the code above is a good model for understanding lexers conceptually.
 
@@ -124,7 +128,7 @@ At this point, it's probably worth discussing why lexers exist.  Again, the role
 
 Why is this necessary?  Why not have the parser read the source text directly?
 
-The main answer is **simplicity**.  Imagine you want to parse a simplified JavaScript <tt>var</tt> declaration: <tt>var </tt>_identifier_<tt>;</tt>.
+The main answer is **simplicity**.  Imagine you want to parse a simplified JavaScript <tt>var</tt> declaration:<br/><tt>var </tt>_identifier_<tt>;</tt>
 
 *Option 1.* Suppose you have a lexer, so the parser's input is a token stream.  To recognize such a <tt>var</tt> declaration, you must (1) match a <tt>T_VAR</tt> token, then (2) match a <tt>T_IDENTIFIER</tt> token, then (3) match a <tt>T_SEMICOLON</tt> token.
 
@@ -134,11 +138,11 @@ Perhaps the most annoying part of Option 2 is ensuring that whitespace and comme
 
 Another argument against Option 2 is that most parsing algorithms simply cannot handle it.  Most parsing algorithms have a step which is something like, "Look at the next symbol in the input, and make a decision."  If the parser is reading tokens, <tt>for</tt> and <tt>fortune</tt> are completely different tokens -- <tt>T_FOR</tt> vs. <tt>T_IDENTIFIER</tt>.  If the parser is reading individual characters, <tt>for</tt> and <tt>fortune</tt> look very similar -- the first three characters are identical -- so the parser needs to see the fourth character before it can distinguish them.  Without going into detail, the need to "look ahead" by several symbols is problematic for many parsing algorithms.
 
-Another argument for using a token stream is **efficiency**.  Lexers can use specialized string tokenization algorithms, which can be blazingly fast.  Parsing algorithms generally involve pushing symbols onto a stack, which is slower.  Tokenization reduces the number of symbols the parser has to process, which improves performance overall.
+Another argument for using a token stream is **efficiency**.  Lexers can use specialized string tokenization algorithms, which can be extremely fast.  Parsing algorithms generally involve pushing symbols onto a stack, which is slower.  Tokenization reduces the number of symbols the parser has to process, which improves performance overall.
 
-## What are the tokens?
+## What are the token types?
 
-Earlier, we assigned each lexeme a "token type," like <tt>T_VAR</tt>, <tt>T_IDENTIFIER</tt>, etc.  In the API code above, I suggested that the lexer could contain an <tt>enum</tt> of every possible token type.
+Earlier, we assigned each lexeme a "token type," like <tt>T_VAR</tt>, <tt>T_IDENTIFIER</tt>, etc.  In the API code above, I suggested that the lexer could contain an <tt>enum</tt> of every possible token type... which implies that the number of token types is finite.
 
 So, what *are* the token types?  The exact set depends on what language is being compiled, but generally it's something like this:
 * One token type for each keyword: <tt>for</tt>, <tt>if</tt>, <tt>while</tt>, etc.
@@ -201,11 +205,11 @@ In the list of tokens above, three things are worth noting.
 
 1. In JavaScript, keywords like <tt>for</tt> and <tt>if</tt> are **reserved words**.  That is, they cannot be used as identifiers; you cannot have a variable named `if`.  This makes lexing easier, since <tt>if</tt> will always tokenize as a <tt>T_IF</tt> token and never as a <tt>T_IDENTIFIER</tt> token.  Some languages, including Fortran, do not have reserved words: `if (if < 5) print *, "Whoa"` is a valid Fortran statement, which compares the value of the variable named `if` to 5.  The lack of reserved words can make lexing and parsing Fortran quite difficult.
 
-2. JavaScript does not allow a space between the equal signs in `if (a == 3)`.  We can enforce this in the lexer by defining <tt>==</tt> to be its own token (<tt>T_EQ_EQ</tt>).  The two equal signs in `if (a = = 3)` would tokenize as two separate <tt>T_EQ</tt> tokens, while the <tt>==</tt> in `if (a == 3)` would become a single <tt>T_EQ_EQ</tt> token.
+2. In JavaScript, the `==` operator cannot have a space between the `=` characters.  We can enforce this in the lexer by defining <tt>==</tt> to be its own token (<tt>T_EQ_EQ</tt>).  The two equal signs in `if (a = = 3)` would tokenize as two separate <tt>T_EQ</tt> tokens, while the <tt>==</tt> in `if (a == 3)` would become a single <tt>T_EQ_EQ</tt> token.  The parser would reject the former -- it is not valid JavaScript -- which is what we want.
 
 3. All names -- variable names, function names, property names, etc. -- become <tt>T_IDENTIFIER</tt> tokens.  Generally speaking, the lexer does not try to determine whether a name refers to a variable, function, etc.; this is handled by a later stage of the compiler.
 
-The last point is not always true.  For example, lexical analyzers for C and C++ must distinguish between identifiers and names that have been typedef'ed (see [link](https://pdos.csail.mit.edu/archive/l/c/roskind.html) for details).  This makes lexing and parsing messy.  Designers of other languages including Go have specifically tried to avoid introducing such complications ([link](https://talks.golang.org/2012/splash.article)).
+The last point is not always true.  For example, lexical analyzers for C and C++ must distinguish between identifiers and names that have been typedef'ed (see this [link](https://pdos.csail.mit.edu/archive/l/c/roskind.html) for details).  This makes lexing and parsing messy.  Designers of other languages including Go have specifically tried to avoid introducing such complications ([link](https://talks.golang.org/2012/splash.article)).
 
 ## Up Next: Flex
 
