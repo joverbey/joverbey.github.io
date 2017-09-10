@@ -1,0 +1,15 @@
+# C++ object files, libraries, and executables
+*.o
+*.obj
+*.a
+*.lib
+demo?/demo?
+demo?/demo?.exe
+
+# Flex-generated files
+lexer.cpp
+lexer.hpp
+
+# Files generated during Windows build
+*.ilk
+*.pdb
