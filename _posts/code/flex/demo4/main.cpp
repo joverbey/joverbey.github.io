@@ -1,4 +1,4 @@
-// Flex Demo 4 - main.cpp
+// Flex Demo 3 - main.cpp
 
 #include "lexer-decls.hpp" // YYSTYPE must be defined before including lexer.hpp
 #include "lexer.hpp"       // yy* types and methods
@@ -9,12 +9,6 @@
 #include <iostream> // cout, endl
 
 namespace {
-std::ostream &operator<<(std::ostream &out, YYLTYPE const &yylloc) {
-  out << "Line " << yylloc.line << ", column " << yylloc.column << ", length "
-      << yylloc.length;
-  return out;
-}
-
 void describe_tokens(const char *string) {
   // Create a new lexer
   yyscan_t scanner;
@@ -32,12 +26,10 @@ void describe_tokens(const char *string) {
   // Repeatedly get the next token from the lexer, stopping after the
   // end-of-input token
   YYSTYPE tokenData;
-  YYLTYPE tokenLocation;
   int tokenNumber;
   do {
-    tokenNumber = yylex(&tokenData, &tokenLocation, scanner);
-    std::cout << tokenNumber << " (" << tokenData.text << ") " << tokenLocation
-              << std::endl;
+    tokenNumber = yylex(&tokenData, scanner);
+    std::cout << tokenNumber << " (" << tokenData.text << ")" << std::endl;
   } while (tokenNumber != END_OF_INPUT);
 
   std::cout << std::endl;
@@ -54,9 +46,5 @@ int main(int argc, char **argv) {
   describe_tokens("foofobarf");
   describe_tokens("Hi\nfoo!");
   describe_tokens("\x84"); // Non-ASCII
-  // Note the positions of END..
-  describe_tokens("foo\n");
-  describe_tokens("foo\nbar");
-  describe_tokens("foo\nbarbar");
   return 0;
 }

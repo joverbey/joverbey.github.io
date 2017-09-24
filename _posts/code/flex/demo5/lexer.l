@@ -1,10 +1,22 @@
-/* Flex Demo 3 - lexer.l */
+/* Flex Demo 4 - lexer.l */
 %{
 #include "lexer-decls.hpp"
+
+#define YY_USER_INIT {  \
+    yylineno = 1;       \
+    yycolumn = 1;       \
+}
+
+#define YY_USER_ACTION {        \
+    yylloc->line = yylineno;    \
+    yylloc->column = yycolumn;  \
+    yylloc->length = yyleng;    \
+    yycolumn += yyleng;         \
+}
 %}
 
 %option reentrant
-%option bison-bridge
+%option bison-bridge bison-locations yylineno
 %option noyywrap nounput
 %option warn nodefault
 

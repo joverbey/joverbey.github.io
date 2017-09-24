@@ -1,20 +1,29 @@
 /* Flex Demo 3 - lexer.l */
 %{
-#include "lexer-decls.hpp"
+  #include <iostream>
 %}
 
-%option reentrant
-%option bison-bridge
 %option noyywrap nounput
 %option warn nodefault
 
+DecimalIntegerLiteral    0|[1-9][0-9]*
+DecimalDigits            [0-9]+
+ExponentPart             [eE]("+"|"-")?{DecimalDigits}
+DecimalLiteral1          {DecimalIntegerLiteral}"."{DecimalDigits}?{ExponentPart}?
+DecimalLiteral2          "."{DecimalDigits}{ExponentPart}?
+DecimalLiteral3          {DecimalIntegerLiteral}{ExponentPart}?
+DecimalLiteral           {DecimalLiteral1}|{DecimalLiteral2}|{DecimalLiteral3}
+
 %%
 
-"f"      { yylval->text = yytext; return T_F; }
-"foo"    { yylval->text = yytext; return T_FOO; }
-"bar"    { }
-.        { yylval->text = yytext; return yytext[0]; }
-\n       { yylval->text = yytext; return yytext[0]; }
-<<EOF>>  { yylval->text = ""; return END_OF_INPUT; }
+[\t\v\f \n\r]*      { }
+{DecimalLiteral}    { std::cout << "Decimal Literal: " << yytext << std::endl; }
+.                   { std::cout << "Unexpected Character: " << yytext << std::endl; }
 
 %%
+
+int main(int, char **)
+{
+    yylex();
+    return 0;
+}
