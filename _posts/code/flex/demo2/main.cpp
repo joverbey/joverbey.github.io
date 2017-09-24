@@ -11,8 +11,8 @@
 #include <string>   // string
 
 namespace {
-std::string describe(int tokenNumber) {
-  switch (tokenNumber) {
+std::string describe(int tokenType) {
+  switch (tokenType) {
   case END_OF_INPUT:
     return "(end of input)";
   case T_EQ:
@@ -23,7 +23,7 @@ std::string describe(int tokenNumber) {
     return "break";
   default: {
     std::ostringstream out;
-    out << static_cast<char>(tokenNumber);
+    out << static_cast<char>(tokenType);
     return out.str();
   }
   }
@@ -45,11 +45,11 @@ void describe_tokens(const char *string) {
 
   // Repeatedly get the next token from the lexer, stopping after the
   // end-of-input token
-  int tokenNumber;
+  int tokenType;
   do {
-    tokenNumber = yylex(scanner);
-    std::cout << describe(tokenNumber) << ' ';
-  } while (tokenNumber != END_OF_INPUT);
+    tokenType = yylex(scanner);
+    std::cout << describe(tokenType) << ' ';
+  } while (tokenType != END_OF_INPUT);
 
   std::cout << std::endl << std::endl;
 

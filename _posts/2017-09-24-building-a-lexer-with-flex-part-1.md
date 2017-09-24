@@ -10,7 +10,7 @@ In [the previous post]({% post_url 2017-09-09-lexical-analysis %}), I described 
 
 ## Lex and Flex
 
-Recall from the previous post that every token type corresponds to a pattern.  For example, in JavaScript, the T_VAR token type always corresponded to the lexeme <tt>var</tt>, while the T_IDENTIFIER token type corresponded to any identifier (a string of one or more characters, where (1) every character is either a letter, decimal digit, underscore, or dollar sign; (2) the first character is not a decimal digit; and (3) the string is not a reserved word like <tt>if</tt> or <tt>while</tt>).
+Recall from the previous post that every token type corresponds to a pattern.  In our JavaScript example, the token type we called T_VAR always corresponded to the lexeme <tt>var</tt>, while the token type T_IDENTIFIER corresponded to any identifier (a string of one or more characters, where (1) every character is either a letter, decimal digit, underscore, or dollar sign; (2) the first character is not a decimal digit; and (3) the string is not a reserved word like <tt>if</tt> or <tt>while</tt>).
 
 In general, a lexical analyzer can be described by a list of rules, something like this.
 
@@ -225,7 +225,7 @@ In Demo #1 above, the `yylex` function returned 1 when it matched a whitespace, 
 {% include_relative code/flex/demo2/lexer-decls.hpp %}
 {% endhighlight %}
 
-To use those names in our Flex input file, we need to make sure that header is included in the generated <tt>lexer.cpp</tt>.  In the first section of the Flex input file, we will add an <tt>#include</tt> directive, enclosed in `%{` `}%` delimeters.  Any code in such a block will inserted into the generated <tt>lexer.cpp</tt>, close to the top of the file.
+To use those names in our Flex input file, we need to make sure that header is included in the generated <tt>lexer.cpp</tt>.  In the first section of the Flex input file, we will add an <tt>#include</tt> directive, enclosed in `%{` &nbsp; `%}` delimeters.  Any code in such a block will inserted into the generated <tt>lexer.cpp</tt>, close to the top of the file.
 
 While we're at it, let's make two more changes.
 * We'll change the action for the whitespace rule to an empty block, `{ }`.
@@ -261,7 +261,7 @@ This means (1) when a single character is matched by the last rule, `yylex` will
 
 This is why we gave our symbolic constants (T_EQ_EQ, etc.) values larger than 255.
 
-(But why 257?  Later, I'll talk about Yacc, a parser generator.  When Yacc generates its token numbers, they always start at 257.  0 is the end-of-input token, 1 through 255 are used for single characters (as above), and 256 is an "error" token.  So, custom tokens are numbered from 257.  We don't have to follow this convention, since we're not using Yacc -- we could have started from 256 -- but I did anyway.)
+(But why 257?  Later, I'll talk about the parser generator Yacc and its modern successor, Bison.  When Bison generates its token numbers, they always start at 257.  0 is the end-of-input token, 1 through 255 are used for single characters (as above), and 256 is an "error" token.  So, custom tokens are numbered from 257.  We don't have to follow this convention, since we're not using Bison -- we could have started from 256 -- but I did anyway.)
 
 ### Updating main.cpp
 
