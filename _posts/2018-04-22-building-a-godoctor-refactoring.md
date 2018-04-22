@@ -523,7 +523,7 @@ our tool (displayed in the <tt>-help</tt> output).
 
 In the call to <tt>AddRefactoring</tt>, the first argument (<tt>"addcopyright"</tt>) is a
 short name for the refactoring.  This isn't important for our tool, since it
-only has one refactoring.  In constrast, the <tt>godoctor</tt> tool has five
+only has one refactoring.  In contrast, the <tt>godoctor</tt> tool has five
 refactorings; their short names are shown in the first column when
 <tt>godoctor -list</tt> is run:
 
@@ -691,7 +691,7 @@ provide a useful skeleton for developing new Go Doctor refactorings.
    What happens?
 
 3. Choose one of the test cases.  In the <tt>.go</tt> file, find the
-   <tt>//<<<<<addcopyright</tt> comment and change "addcopyright" to something
+   `//<<<<<addcopyright` comment and change "addcopyright" to something
    invalid.  What happens?
 
 4. Add two new test cases for the Add Copyright refactoring: one that should
