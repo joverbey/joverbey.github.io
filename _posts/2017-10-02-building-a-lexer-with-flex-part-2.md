@@ -4,6 +4,7 @@ title:  "Building a Lexer with Flex, Part 2"
 cover:  empty.jpg
 date:   2017-10-02 00:00:00 ET
 categories: compilers lexers
+published: false
 ---
 
 [The previous post]({% post_url 2017-09-24-building-a-lexer-with-flex-part-1 %}) provided an introduction to Flex, describing how Flex-generated lexers tokenize an input stream.  In this post, we'll discuss Flex's pattern syntax -- how to write a regular expression describing a particular type of token.  We'll also discuss two important Flex warnings, and why you shouldn't ignore them.

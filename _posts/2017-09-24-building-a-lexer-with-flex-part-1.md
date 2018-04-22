@@ -4,6 +4,7 @@ title:  "Building a Lexer with Flex, Part 1"
 cover:  empty.jpg
 date:   2017-09-24 00:00:00 ET
 categories: compilers lexers
+published: false
 ---
 
 In [the previous post]({% post_url 2017-09-09-lexical-analysis %}), I described what lexical analysis is, what a token is, and at a broad level, what sort of API a lexer provides.  In this post, I'll describe how to build a lexer in C/C++ using [Flex](https://github.com/westes/flex), the Fast Lexical Analyzer Generator.
