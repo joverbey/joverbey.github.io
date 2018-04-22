@@ -228,7 +228,7 @@ these are tiny Go programs used by the unit tests.
 
 ## The Refactoring: addcopyright.go
 
-All of the interesting work is in addcopyright.go.  Skim the entire file (76
+All of the interesting work is in addcopyright.go.  Skim the entire file (80
 lines), then we'll describe all the pieces.
 
 {% highlight go linenos %}
@@ -276,12 +276,7 @@ func (r *AddCopyright) Run(config *refactoring.Config) *refactoring.Result {
 
         extent := r.findInComments("Copyright")
         if extent != nil {
-                file := r.Program.Fset.File(r.File.Package)
-                startPos := file.Pos(extent.Offset)
-                endPos := file.Pos(extent.OffsetPastEnd())
-
-                r.Log.Error("An existing copyright was found.")
-                r.Log.AssociatePos(startPos, endPos)
+                r.logError(*extent, "An existing copyright was found.")
                 return &r.Result
         }
 
@@ -296,6 +291,15 @@ func (r *AddCopyright) findInComments(text string) *text.Extent {
                 return nil
         }
         return occurrences[0]
+}
+
+func (r *AddCopyright) logError(extent text.Extent, text string) {
+        file := r.Program.Fset.File(r.File.Package)
+        startPos := file.Pos(extent.Offset)
+        endPos := file.Pos(extent.OffsetPastEnd())
+
+        r.Log.Error(text)
+        r.Log.AssociatePos(startPos, endPos)
 }
 
 func (r *AddCopyright) addCopyright(name string) {
@@ -410,17 +414,13 @@ code.
 {% highlight go %}
         extent := r.findInComments("Copyright")
         if extent != nil {
-                file := r.Program.Fset.File(r.File.Package)
-                startPos := file.Pos(extent.Offset)
-                endPos := file.Pos(extent.OffsetPastEnd())
-
-                r.Log.Error("An existing copyright was found.")
-                r.Log.AssociatePos(startPos, endPos)
+                r.logError(*extent, "An existing copyright was found.")
                 return &r.Result
         }
 {% endhighlight %}
 
-The <tt>findInComments</tt> method is on lines 59-65.  It searches for the first
+The <tt>findInComments</tt> method is on lines 54-60, and <tt>logError</tt> is
+on lines 62-69.  The <tt>findInComments</tt> method searches for the first
 comment containing the word "Copyright" and returns a <tt>*text.Extent</tt>
 describing its position, or <tt>nil</tt> if it was not found.
 
@@ -440,12 +440,6 @@ UTF-8 encoded source code.  For example, consider the string "今日は"
 (kon'nichiwa, "hello" in Japanese).  Each character is three bytes long, so
 the string is 9 bytes in total.  If the first character (今) were at offset 0,
 then the suffix "は" would be described by <tt>text.Extent{6, 3}</tt>.
-
-The last lines add an error message to the log.  The <tt>AssociatePos</tt> method
-takes two [token.Pos](https://godoc.org/go/token#Pos) arguments, which
-determine the file, line, and column to associate with the error message.  The
-first three lines create these arguments from the <tt>text.Extent</tt>.  Don't worry
-too much about those details for now.
 
 {% highlight go %}
         r.addCopyright(config.Args[0].(string))
@@ -494,6 +488,15 @@ directly change any source code!*  Instead, it builds a list of edits that
 command line driver decides what to do with this list of edits; it produces a
 patch file, outputs the modified source code, or overwrites the file on disk,
 depending on what flags were passed on the command line.
+
+### Logging an Error Message: The <tt>logError</tt> Method
+
+The <tt>logError</tt> method (lines 62-69) adds an error message to the log by
+calling <tt>r.Log.Error</tt>.  The log's <tt>AssociatePos</tt> method takes two
+[token.Pos](https://godoc.org/go/token#Pos) arguments, which determine the
+file, line, and column to associate with the error message.  The first three
+lines create these arguments from the <tt>text.Extent</tt>.  Don't worry too
+much about the details for now; it's safe to treat that code as boilerplate.
 
 ## The Driver: main.go
 
@@ -716,7 +719,7 @@ The Add Copyright refactoring is in GitHub at [https://github.com/joverbey/goadd
 
 |:---------------------------------------------------------------------------|---------:|
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/main.go">main.go</a> | 16 lines |
-| <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/addcopyright.go">refactoring/addcopyright.go</a> | 76 lines |
+| <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/addcopyright.go">refactoring/addcopyright.go</a> | 80 lines |
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/addcopyright_test.go">refactoring/addcopyright_test.go</a> | 20 lines |
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/testdata/addcopyright/001-helloworld/main.go">refactoring/testdata/addcopyright/001-helloworld/main.go</a> | 7 lines |
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/testdata/addcopyright/001-helloworld/main.golden">refactoring/testdata/addcopyright/001-helloworld/main.golden</a> | 8 lines |
@@ -724,4 +727,4 @@ The Add Copyright refactoring is in GitHub at [https://github.com/joverbey/goadd
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/testdata/addcopyright/002-noname/main.golden">refactoring/testdata/addcopyright/002-noname/main.golden</a> | 12 lines |
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/testdata/addcopyright/003-error1/main.go">refactoring/testdata/addcopyright/003-error1/main.go</a> | 8 lines |
 | <a href="https://github.com/joverbey/goaddcopyright/blob/master/refactoring/testdata/addcopyright/004-error2/main.g">refactoring/testdata/addcopyright/004-error2/main.go</a> | 12 lines |
-| | Total: 170 lines |
+| | Total: 174 lines |
