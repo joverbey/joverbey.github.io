@@ -3,7 +3,7 @@ layout: post
 title:  "Building a Go Doctor Refactoring"
 cover:  empty.jpg
 date:   2018-04-22 12:00:00 ET
-categories: blog
+categories: refactoring golang godoctor
 ---
 
 In this post, I'll give an overview of how to create a new refactoring for the
